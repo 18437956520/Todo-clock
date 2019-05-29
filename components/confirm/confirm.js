@@ -6,7 +6,7 @@ Component({
     },
     visible: {
       type: Boolean,
-      value: true
+      value: false
     },
     value: {
       type: String,
@@ -15,13 +15,6 @@ Component({
   },
   data: {
     _value: ""
-  },
-  lifetimes: {
-    attached() {
-      if (this.properties.value) {
-        this.properties.value = this.data._value
-      }
-    }
   },
   methods: {
     confirm() {

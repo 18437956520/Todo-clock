@@ -23,3 +23,8 @@ button::after{ border: none; }
 .tomato-button.mini {
   width: 360rpx;
 }
+.tomato-button text{
+  font-family: Regular;
+  font-weight: bold;
+  letter-spacing: 4rpx;
+}

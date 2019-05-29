@@ -21,12 +21,12 @@
     justify-content: center;
   }
 
- .createButton { 
+ /* .createButton { 
    position: absolute;
    top: 580rpx;
    left: 50%;
    transform: translateX(-50%);
-  }
+  } */
 
  .todoList { 
    padding: 13rpx 30rpx;
