@@ -13,8 +13,8 @@ Page({
   confirm(event){
 
   },
-  concel(event){
-
+  hideConfirm(){
+    this.setData({visibleConfirm: false})
   },
   showConfirm(){
     this.setData({visibleConfirm: true})
