@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/home/home",
+    "components/clock/clock",
     "components/button/button"
   ],
   "window": {
