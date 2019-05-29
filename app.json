@@ -2,7 +2,8 @@
   "pages": [
     "pages/home/home",
     "components/clock/clock",
-    "components/button/button"
+    "components/button/button",
+    "components/confirm/confirm"
   ],
   "window": {
     "backgroundTextStyle": "light",
