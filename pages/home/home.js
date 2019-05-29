@@ -23,6 +23,11 @@ Page({
     }
     
   },
+  destroyTodo(event){
+    let index = event.currentTarget.dataset.index
+    this.data.lists[index].finished = true
+    this.setData({lists:this.data.lists})
+  },
   hideConfirm(){
     this.setData({visibleConfirm: false})
   },
