@@ -13,6 +13,16 @@ Page({
   confirm(event){
 
   },
+  confirmCreate(event){
+    let content = event.detail
+    if(content){
+      let todo = [{ id: this.data.lists.length + 1, text: content, finished: false }]
+      this.data.lists = todo.concat(this.data.lists)
+      this.setData({lists: this.data.lists})
+      this.hideConfirm()
+    }
+    
+  },
   hideConfirm(){
     this.setData({visibleConfirm: false})
   },

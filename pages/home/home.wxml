@@ -11,5 +11,5 @@
       <g-clock text="设定闹钟⏰"></g-clock>
     </view>
   </view>
-  <g-confirm placeholder="balabala" bindconfirm="confirm" bindcancel="hideConfirm" visible="{{visibleConfirm}}"></g-confirm>    
+  <g-confirm placeholder="balabala" bindconfirm="confirmCreate" bindcancel="hideConfirm" visible="{{visibleConfirm}}"></g-confirm>    
 </view>
