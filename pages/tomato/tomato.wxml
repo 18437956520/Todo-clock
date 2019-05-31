@@ -1,6 +1,6 @@
 <view class="cantainer">
   <view class="clock"><g-clock text="{{time}}" fontSize="48"></g-clock></view>
-  <view class="pause"><g-button type="change" size="mini" text="暂停"></g-button></view>
+  <view class="pause"><g-button type="change" size="mini" text="暂停" bindtap="clearTimer"></g-button></view>
   <view class="abandon"><g-button size="mini" text="放弃"></g-button></view>
   <view class="again"><g-button size="mini" type="change" text="再来一组"></g-button></view>
 </view>

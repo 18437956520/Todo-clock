@@ -16,14 +16,17 @@ Page({
     this.changeTime()
     this.timer = setInterval(() => {
       if(this.data.defaultSecond === 0){
-        clearInterval(this.timer)
-        this.timer = null
-        return
+        return this.clearTimer()
       }
 
       this.data.defaultSecond = this.data.defaultSecond - 1
       this.changeTime()
     }, 1000)
+  },
+
+  clearTimer(){
+    clearInterval(this.timer)
+    this.timer = null
   },
 
   changeTime(){
