@@ -1,10 +1,10 @@
 // pages/tomato/tomato.js
 Page({
 
+  timer: null,
   data: {
-    defaultSecond: 1500,
-    time: "",
-    timer: null
+    defaultSecond: 15,
+    time: ""
   },
 
   
@@ -15,6 +15,12 @@ Page({
   xxx(){
     this.changeTime()
     this.timer = setInterval(() => {
+      if(this.data.defaultSecond === 0){
+        clearInterval(this.timer)
+        this.timer = null
+        return
+      }
+
       this.data.defaultSecond = this.data.defaultSecond - 1
       this.changeTime()
     }, 1000)
