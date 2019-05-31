@@ -2,18 +2,23 @@
 Page({
 
   data: {
-    time: 1500,
-    xxx: ""
+    defaultSecond: 1500,
+    time: "",
+    timer: null
   },
 
   
   onShow: function () {
     this.changeTime()
+    this.timer = setInterval(()=>{
+      this.data.defaultSecond = this.data.defaultSecond - 1
+      this.changeTime()
+    },1000)
   },
 
   changeTime(){
-    let min = Math.floor(this.data.time/60)
-    let sec = Math.floor(this.data.time%60)
+    let min = Math.floor(this.data.defaultSecond/60)
+    let sec = Math.floor(this.data.defaultSecond%60)
     if(sec === 0){
       sec = "00"
     }
@@ -23,6 +28,6 @@ Page({
     if((min+"").length === 1){
       min = "0" + min
     }
-    this.setData({ xxx: `${min}:${sec}`})
+    this.setData({ time: `${min}:${sec}`})
   }
 })
