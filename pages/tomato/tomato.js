@@ -9,11 +9,15 @@ Page({
 
   
   onShow: function () {
+    this.xxx()
+  },
+
+  xxx(){
     this.changeTime()
-    this.timer = setInterval(()=>{
+    this.timer = setInterval(() => {
       this.data.defaultSecond = this.data.defaultSecond - 1
       this.changeTime()
-    },1000)
+    }, 1000)
   },
 
   changeTime(){
