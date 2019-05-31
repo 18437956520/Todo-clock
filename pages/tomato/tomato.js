@@ -3,11 +3,12 @@ Page({
 
   timer: null,
   data: {
-    defaultSecond: 5,
+    defaultSecond: 1500,
     time: "",
     timerStatus: "pause",
     confirmVisible: false,
-    againButtonVisible: false
+    againButtonVisible: false,
+    finishConfirmVisible: false
   },
 
   
@@ -23,13 +24,14 @@ Page({
       this.changeTime()
       if(this.data.defaultSecond === 0){
         this.setData({againButtonVisible: true})
+        this.setData({finishConfirmVisible: true})
         return this.clearTimer()
       }      
     }, 1000)
   },
 
   againTimer(){
-    this.data.defaultSecond = 10
+    this.data.defaultSecond = 1500
     this.setData({ againButtonVisible: false })
     this.startTimer()
   },
@@ -56,11 +58,22 @@ Page({
   },
   confirmAbandon(event){
     let content = event.detail
+    wx.navigateBack({
+      to: -1
+    })
+  },
+  confirmFinish(event){
+    let content = event.detail
+  },
+  confirmCancel(){
+    this.setData({ finishConfirmVisible: false})
   },
   showConfirm(){
     this.setData({confirmVisible: true})
+    this.clearTimer()
   },
   hideConfirm(){
     this.setData({confirmVisible: false})
+    this.startTimer()
   }
 })

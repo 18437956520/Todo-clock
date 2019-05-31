@@ -8,4 +8,5 @@
   <view class="abandon" wx:if="{{!againButtonVisible}}"><g-button size="mini" text="放弃" bindtap="showConfirm"></g-button></view>
   <view class="again" wx:if="{{againButtonVisible}}" bindtap="againTimer"><g-button size="mini" type="change" text="再来一组"></g-button></view>
   <g-confirm visible="{{confirmVisible}}" bindconfirm="confirmAbandon" bindcancel="hideConfirm" placeholder="为什么要放弃呢？"></g-confirm>
+  <g-confirm visible="{{finishConfirmVisible}}" bindconfirm="confirmFinish" bindcancel="confirmCancel" placeholder="完成了什么呢？"></g-confirm>
 </view>
