@@ -5,7 +5,9 @@ Page({
   data: {
     defaultSecond: 15,
     time: "",
-    timerStatus: "pause"
+    timerStatus: "pause",
+    confirmVisible: false,
+    againButtonVisible: false
   },
 
   
@@ -18,6 +20,7 @@ Page({
     this.changeTime()
     this.timer = setInterval(() => {
       if(this.data.defaultSecond === 0){
+        this.setData({againButtonVisible: true})
         return this.clearTimer()
       }
       this.data.defaultSecond = this.data.defaultSecond - 1
@@ -44,5 +47,14 @@ Page({
       min = "0" + min
     }
     this.setData({ time: `${min}:${sec}`})
+  },
+  confirmAbandon(event){
+    let content = event.detail
+  },
+  showConfirm(){
+    this.setData({confirmVisible: true})
+  },
+  hideConfirm(){
+    this.setData({confirmVisible: false})
   }
 })

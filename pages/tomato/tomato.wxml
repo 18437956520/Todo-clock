@@ -2,9 +2,10 @@
   <view class="clock">
     <g-clock text="{{time}}" fontSize="48"></g-clock>
   </view>
-  <view class="pause">
+  <view class="pause" wx:if="{{!againButtonVisible}}">
     <g-button type="change" size="mini" text="暂停" wx:if="{{timerStatus === 'start'}}" bindtap="clearTimer"></g-button>
     <g-button type="change" size="mini" text="继续" wx:else bindtap="startTimer"></g-button></view>
-  <view class="abandon"><g-button size="mini" text="放弃"></g-button></view>
-  <view class="again"><g-button size="mini" type="change" text="再来一组"></g-button></view>
+  <view class="abandon" wx:if="{{!againButtonVisible}}"><g-button size="mini" text="放弃" bindtap="showConfirm"></g-button></view>
+  <view class="again" wx:if="{{againButtonVisible}}"><g-button size="mini" type="change" text="再来一组"></g-button></view>
+  <g-confirm visible="{{confirmVisible}}" bindconfirm="confirmAbandon" bindcancel="hideConfirm" placeholder="为什么要放弃呢？"></g-confirm>
 </view>
