@@ -4,21 +4,22 @@ Page({
   timer: null,
   data: {
     defaultSecond: 15,
-    time: ""
+    time: "",
+    timerStatus: "pause"
   },
 
   
   onShow: function () {
-    this.xxx()
+    this.startTimer()
   },
 
-  xxx(){
+  startTimer(){
+    this.setData({timerStatus: "start"})
     this.changeTime()
     this.timer = setInterval(() => {
       if(this.data.defaultSecond === 0){
         return this.clearTimer()
       }
-
       this.data.defaultSecond = this.data.defaultSecond - 1
       this.changeTime()
     }, 1000)
@@ -27,6 +28,7 @@ Page({
   clearTimer(){
     clearInterval(this.timer)
     this.timer = null
+    this.setData({ timerStatus: "pause"})
   },
 
   changeTime(){
