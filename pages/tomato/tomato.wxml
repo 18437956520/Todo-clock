@@ -1,0 +1,6 @@
+<view class="cantainer">
+  <g-clock></g-clock>
+  <g-button type="change" size="mini" text="暂停"></g-button>
+  <g-button type="change" size="mini" text="放弃"></g-button>
+  <g-button size="mini" text="再来一组"></g-button>
+</view>
