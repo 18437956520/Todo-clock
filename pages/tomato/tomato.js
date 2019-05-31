@@ -28,6 +28,12 @@ Page({
     }, 1000)
   },
 
+  againTimer(){
+    this.data.defaultSecond = 10
+    this.setData({ againButtonVisible: false })
+    this.startTimer()
+  },
+
   clearTimer(){
     clearInterval(this.timer)
     this.timer = null
