@@ -12,10 +12,11 @@ Page({
   },
 
   
-  
+
   onShow: function () {
     this.startTimer()
   },
+
 
   startTimer(){
     this.setData({timerStatus: "start"})
