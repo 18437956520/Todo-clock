@@ -13,6 +13,7 @@ Page({
 
   
 
+
   onShow: function () {
     this.startTimer()
   },
