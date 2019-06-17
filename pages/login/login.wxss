@@ -1,0 +1,39 @@
+.login .avatar{
+  width: 270rpx;
+  height: 270rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 16rpx solid #F6705A;
+}
+
+.login .name-wrap{
+  color: #F6705A;
+  font-size: 30rpx;
+  position: relative;
+}
+
+.login .name-wrap::after{
+  content: "";
+  position: absolute;
+  bottom: -8rpx;
+  left: 50%;
+  width: 20%;
+  height: 4rpx;
+  background: #F6705A;
+  transform: translateX(-50%);
+}
+
+button::after{ border: none; }
+.button-hover { opacity: 0.6; }
+.loginButton {
+  width: 360rpx;
+  height: 80rpx;
+  border-radius: 16rpx;
+  color: #fff;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: linear-gradient(to right, #EF9B75, #F6705A);
+}
