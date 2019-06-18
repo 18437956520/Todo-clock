@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/binding/binding",
-    "pages/login/login",
-    "pages/me/me",
     "pages/home/home",
+    "pages/login/login",
+    "pages/binding/binding",
+    "pages/me/me",
     "pages/tomato/tomato",
     "components/clock/clock",
     "components/button/button",
