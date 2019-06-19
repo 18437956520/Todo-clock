@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -12,9 +12,9 @@
 		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
-	"appid": "wx027948f07d076c44",
-	"projectname": "TodoClock",
+	"libVersion": "2.6.0",
+	"appid": "wxfd2b42bff7d49955",
+	"projectname": "%E7%95%AA%E8%8C%84%E9%97%B9%E9%92%9F",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

@@ -6,7 +6,8 @@ button::after{ border: none; }
   border-radius: 16rpx;
   color: #fff;
   font-size: 30rpx;
-  letter-spacing: 5rpx;
+  font-weight: bold;
+  letter-spacing: 3rpx;
   display: flex;
   justify-content: center;
   align-items: center;

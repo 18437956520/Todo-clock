@@ -8,26 +8,22 @@
 
   .tomato-wrapper {
     flex: 1;
-    margin-top: 66rpx;
+    margin-top: 100rpx;
     padding: 0 28rpx;
   }
   .tomato-wrapper .tomato {
     background:#EEF7F6;
     border-radius: 8rpx;
     box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.10);
-    height: 473rpx;
+    height: 400rpx;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .tomato-wrapper .tomato text{
-    font-size: 80rpx;
-  }
-
  .createButton { 
    position: absolute;
-   top: 500rpx;
+   top: 550rpx;
    left: 50%;
    transform: translateX(-50%);
   }
