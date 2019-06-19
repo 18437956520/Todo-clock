@@ -1,33 +1,33 @@
 {
   "pages": [
+    "pages/me/me",
     "pages/home/home",
     "pages/login/login",
     "pages/binding/binding",
-    "pages/me/me",
     "pages/tomato/tomato",
     "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#F6705A",
     "navigationBarTitleText": "番茄闹钟",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "#515151",
+    "color": "#000",
     "selectedColor": "#F6705A",
     "backgroundColor": "#fff",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "专注",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-active.png"
+        "text": "闹钟",
+        "iconPath": "images/total.png",
+        "selectedIconPath": "images/total-active.png"
       },
       {
         "pagePath": "pages/me/me",
-        "text": "我的",
+        "text": "主页",
         "iconPath": "images/me.png",
         "selectedIconPath": "images/me-active.png"
       }
