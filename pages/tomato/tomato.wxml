@@ -3,7 +3,7 @@
   <view wx:if="{{!againButtonVisible}}">
     <view class="stop">
       <t-button type="change" size="mini" text="暂停" bindtap='clearTimer' wx:if="{{timerStatus === 'start'}}"></t-button>
-      <t-button type="change" size="mini" text="开始" bindtap='startTimer' wx:else></t-button>
+      <t-button type="change" size="mini" text="继续" bindtap='startTimer' wx:else></t-button>
     </view>
     <view class="abandon"><t-button size="mini" text="放弃" bindtap='showConfirm'></t-button></view>
   </view>
