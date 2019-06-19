@@ -15,18 +15,18 @@
     background:#EEF7F6;
     border-radius: 8rpx;
     box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.10);
-    height: 375rpx;
+    height: 473rpx;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
- /* .createButton { 
+ .createButton { 
    position: absolute;
-   top: 580rpx;
+   top: 500rpx;
    left: 50%;
    transform: translateX(-50%);
-  } */
+  }
 
  .todoList { 
    padding: 13rpx 30rpx;

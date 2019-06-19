@@ -4,8 +4,11 @@
   </view>
   <view class="name-wrap">
     <open-data type='userNickName' class="name"></open-data>
-    <navigator url="/pages/binding/binding" wx:if="{{!me.account}}"></navigator>
   </view>
-  <button class="loginButton">登录</button>
-  <text url="/pages/binding/binding" class="binding">还没有与PC端绑定？去绑定</text>
+  <button class="loginButton"
+        open-type="getUserInfo" 
+        bindgetuserinfo="login"
+        withCredentials="true">
+        登录
+  </button>
 </view>
