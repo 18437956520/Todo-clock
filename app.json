@@ -1,45 +1,36 @@
 {
-  "pages": [
+  "pages":[
     "pages/home/home",
-    "pages/login/login",
     "pages/binding/binding",
+    "pages/login/login",
     "pages/me/me",
     "pages/tomato/tomato",
-    "components/clock/clock",
-    "components/button/button",
-    "components/confirm/confirm"
+    "pages/test/test"
   ],
-  "window": {
-    "backgroundTextStyle": "light",
+  "window":{
+    "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Todo-Clock",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "番茄闹钟",
+    "navigationBarTextStyle":"black"
   },
   "tabBar": {
     "color": "#515151",
-    "selectedColor": "F6705A",
-    "backgroundColor": "#FFFFFF",
+    "selectedColor": "#F6705A",
+    "backgroundColor": "#fff",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/home/home",
         "text": "专注",
-        "iconPath": "images/total.png",
-        "selectedIconPath": "images/total-active.png"
-      },
-      {
-        "pagePath": "pages/home/home",
-        "text": "统计",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home-active.png"
       },
       {
-        "pagePath": "pages/home/home",
-        "text": "我",
+        "pagePath": "pages/me/me",
+        "text": "我的",
         "iconPath": "images/me.png",
         "selectedIconPath": "images/me-active.png"
       }
     ]
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

@@ -16,14 +16,21 @@ Component({
   data: {
     _value: ""
   },
+  lifetimes: {
+    attached() {
+      if (this.properties.value) {
+        this.properties.value = this.data._value
+      }
+    }
+  },
   methods: {
-    confirm() {
+    confirm(){
       this.triggerEvent('confirm', this.data._value)
     },
-    cancel() {
+    cancel(){
       this.triggerEvent('cancel', this.data._value)
     },
-    watchValue(event) {
+    watchValue(event){
       this.data._value = event.detail.value
     }
   }

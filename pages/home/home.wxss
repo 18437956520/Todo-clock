@@ -21,6 +21,10 @@
     justify-content: center;
   }
 
+  .tomato-wrapper .tomato text{
+    font-size: 80rpx;
+  }
+
  .createButton { 
    position: absolute;
    top: 500rpx;

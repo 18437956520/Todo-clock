@@ -15,10 +15,10 @@
             data-content="{{item.description}}">{{item.description}}</text>
     </view>
   </scroll-view>
-  <t-button type="change" class="createButton" text="创建任务" bindtap='showCreateConfirm'>创建任务</t-button>
+  <t-button type="change" class="createButton" text="创建任务" bindtap='showCreateConfirm'></t-button>
   <view class="tomato-wrapper">
     <navigator class="tomato" url="/pages/tomato/tomato">
-     <t-clock text="点击开始闹钟"></t-clock>
+     <t-clock text="设定闹钟⏰"></t-clock>
     </navigator>
   </view>
   <t-confirm placeholder="我完成了什么" bindconfirm="confirmCreate" bindcancel="hideCreateConfirm" visible="{{visibleCreateConfirm}}"></t-confirm>

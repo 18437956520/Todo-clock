@@ -1,10 +1,10 @@
 Component({
-  properties:{
-    text:{
+  properties: {
+    text: {
       type: String,
       value: ""
     },
-    fontSize:{
+    fontSize: {
       type: String,
       value: "32"
     }
