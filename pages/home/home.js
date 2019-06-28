@@ -1,73 +1,111 @@
 // pages/home/home.js
-const {http} = require('../../lib/http.js');
-
+const {http} = require('../../lib/http.js')
 Page({
   updateId: '',
-  updatIndex: '',
+  description:'',
   data: {
-    lists: [],
-    visibleCreateConfirm: false,
-    visibleUpdateConfirm: false,
-    updateContent: "",
-    animationData: {}
+    lists: [] ,
+    visibleConfirm: false,
+    newTodos:'',
+    visibleUpdate: false,
+    aftercompleted: false,
+    selectCompleted:'',
+    selectTab: '',
   },
   onShow(){
-    http.get('/todos?completed=false').then(response=>{
-      this.setData({ lists: response.data.resources })
-    })
+    this.getLists()
+    if(!this.data.lists.length){
+      this.setData({selectTab: ''})
+    }
+    
   },
+  getLists(){//初始化
+    http.get('/todos?completed = false').then(res => {
+      if (res.data.resources) {
+        this.data.lists = res.data.resources
+        this.setData({ lists: this.data.lists })
+        this.hideConfirm()
+      }
+    })
+  },//确认创建
   confirmCreate(event){
     let content = event.detail
-    console.log(content)
-    if (content) {
+    if(content){
       http.post('/todos',{
-          completed: false, description: content
-      })
-      .then(response => {
-        let todo = [response.data.resource]
-        this.data.lists = todo.concat(this.data.lists)
-        this.setData({ lists: this.data.lists })
-        this.hideCreateConfirm()
+          completed: false, description: content 
+      }).then( res => {
+          let todo = [res.data.resource]
+          this.data.lists = todo.concat(this.data.lists)
+          this.setData({ lists: this.data.lists })
+          this.hideConfirm()
+          wx.showToast({
+            title: '创建成功',
+            icon: 'success',
+            duration: 500
+          })
       })
     }
+  
+  }, 
+  updateTodos(event){//更新
+    let { id, index } = event.currentTarget.dataset
+    this.updateId =id
+    let description = this.data.lists[index].description
+    this.setData({ newTodos: description,visibleUpdate : true})
   },
-  changeText(event){
-    let {content,id,index} = event.currentTarget.dataset
-    this.updateId = id
-    this.updatIndex = index
-    this.setData({ visibleUpdateConfirm: true, updateContent: content})
+  confirmUpdate(event) {//确认更新
+    let description = event.detail
+    if (description){
+     let description = event.detail
+     http.put(`/todos/${this.updateId}`, {
+      description: description
+     }).then(res => {
+       this.getLists()
+       this.hideUpdate()
+       wx.showToast({
+         title: '修改成功',
+         icon: 'success',
+         duration: 500
+       })
+     })
+   }
+  this.hideUpdate()
+   
   },
-  confirmUpdate(event){
-    let content = event.detail
-    http.put(`/todos/${this.updateId}`, {
-      description: content
-    })
-    .then(response => {
-      let todo = response.data.resource
-      this.data.lists[this.updatIndex] = todo
-      this.setData({ lists: this.data.lists })
-      this.hideUpdateConfirm()
-    })
+  hideUpdate(){
+    this.setData({ visibleUpdate : false})
   },
-  destroyTodo(event){
-    let index = event.currentTarget.dataset.index
+  destroyTodo(event){//删除
     let id = event.currentTarget.dataset.id
-    http.put(`/todos/${id}`,{
-      completed: true
-    })
-    .then(response => {
-      let todo = response.data.resource
-      this.data.lists[index] = todo
-      this.setData({ lists: this.data.lists })
-    })
+    let index = event.currentTarget.dataset.index
+    this.setData({ selectTab : index})
+    setTimeout(()=>{
+      http.put(`/todos/${id}`, {
+        completed: true
+      }).then(res => {
+        let todo = res.data.resource
+        this.data.lists[index] = todo
+        this.setData({ lists: this.data.lists })
+        this.setData({selectTab : ''})
+        wx.showToast({
+          title: '确认完成',
+          icon: 'success',
+          duration: 500
+        })
+      })
+    },500)
+    
+    
+    
   },
-  hideCreateConfirm(){
-    this.setData({ visibleCreateConfirm: false })
+  showConfirm(){ //显示创建confirm
+    this.setData({ visibleConfirm : true})
   },
-  showCreateConfirm(){
-    this.setData({ visibleCreateConfirm: true })
+  cancelCreate(){//取消创建
+    this.hideConfirm()
   },
-  hideUpdateConfirm(){
-    this.setData({ visibleUpdateConfirm: false })
+  hideConfirm() {
+    this.setData({ visibleConfirm: false })
   }
+
 })

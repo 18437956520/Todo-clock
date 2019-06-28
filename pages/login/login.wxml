@@ -9,6 +9,6 @@
         open-type="getUserInfo" 
         bindgetuserinfo="login"
         withCredentials="true">
-        登录
+        双 击 登 录
   </button>
 </view>
